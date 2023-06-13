@@ -1,0 +1,187 @@
+:root {
+
+                                        /*THEME 1*/
+    ---Very-dark-desaturated-blue-1: hsl(222, 26%, 31%); /*(main background)*/--Very-dark-desaturated-blue-2: hsl(223, 31%, 20%);/*(toggle background, keypad background)*/
+    --Very-dark-desaturated-blue-3: hsl(224, 36%, 15%);/*(screen background)*/
+
+    /* #### Keys  */
+
+    --Desaturated-dark-blue-1: hsl(225, 21%, 49%); /*(key background)*/
+    --Desaturated-dark-blue-2: hsl(224, 28%, 35%);/*(key shadow)*/
+    --Red: hsl(6, 63%, 50%);/*(key background, toggle)*/
+    --Dark-red: hsl(6, 70%, 34%);/*(key shadow)*/
+    --Light-grayish-orange: hsl(30, 25%, 89%);/*(key background)*/
+    --Grayish-orange: hsl(28, 16%, 65%);/*(key shadow)*/
+
+    /* #### Text  */
+
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+    }
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(---Very-dark-desaturated-blue-1);
+    font-family: 'League Spartan', sans-serif;
+}
+
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    text-align: end;
+    margin: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-top-left-radius: 50px;
+}
+
+main {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+}
+
+button{
+    cursor: pointer;
+    box-shadow: 0px 4px 1px var(--Grayish-orange);
+    width: 65px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--Light-grayish-orange);
+    color: var(--Very-dark-grayish-blue);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 18px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+button:active{
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+}
+
+.input-output{
+    width: 338px;
+}
+
+.input-output input{
+    font-family: 'League Spartan', sans-serif;
+    background-color: var(--Very-dark-desaturated-blue-3);
+    color: var(--White);
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border: none;
+}
+
+.input{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 40px;
+    outline: none;
+}
+
+.output{
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 35px;
+    outline: none;
+}
+
+.calculator{
+    background-color: var(--Very-dark-desaturated-blue-2);
+    border-radius: 10px;
+    width: 338px;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equal button{
+    background-color: var(--Red);
+    color: var(--White);
+    width: 100%;
+    box-shadow: 0px 4px 1px var(--Dark-red);
+}
+
+.equal button:active,
+.reset button:active,
+.delete button:active{
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+}
+
+.reset{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.equal{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.delete button,
+.reset button{
+    width: 100%;
+    background-color: var(--Desaturated-dark-blue-1);
+    color: var(--White);
+    box-shadow: 0px 4px 1px var(--Desaturated-dark-blue-2);
+}
+
+.keys{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 15px;
+    justify-content: center;
+}
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--Grayish-orange);
+}
+
+
+@media screen and (max-width: 390px) {
+    .input-output{
+        width: 278px;
+    }
+
+    .calculator{
+        width: 278px;
+    }
+
+    button{
+        width: 50px;
+    }
+
+    button{
+        padding: 6px;
+    }
+}
