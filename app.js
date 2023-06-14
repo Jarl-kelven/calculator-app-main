@@ -43,25 +43,28 @@ let input = ''
 // function that prevents repitition of operation symbols
 function validateInput(value) {
     let lastInput = displayInput.value.slice(-1);
-    // let allInput = displayInput.value
     let operators = ['+', '-', '/', '*'];
-    
-    // Prevents repetition of the dot (.) key
-    if (value === '.' && lastInput.includes('.')) {
+    let lastNumber = getLastNumber(displayInput.value);
+
+    // Prevents repetition of the dot (.) key within each number
+    if (value === '.' && lastNumber.includes('.')) {
         return false;
     }
     
     // Prevents repetition of operator keys
     if (operators.includes(value)) {
-        if (operators.includes(lastInput)) {
+        if (operators.includes(lastInput) || displayInput.value === '' || (lastInput === '' && (value === '*' || value === '/'))) {
             return false;
         } else {
             return true;
         }
     }
 
-
     return true;
-    
 }
 
+// Helper function to get the last number in the chain of expressions
+function getLastNumber(input) {
+    let numbers = input.split(/[-+/*]/);
+    return numbers[numbers.length - 1];
+            }
